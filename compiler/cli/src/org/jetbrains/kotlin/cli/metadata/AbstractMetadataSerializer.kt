@@ -22,7 +22,7 @@ abstract class AbstractMetadataSerializer<T>(
         definedMetadataVersion ?: configuration.get(CommonConfigurationKeys.METADATA_VERSION) as? BuiltInsBinaryVersion
         ?: BuiltInsBinaryVersion.INSTANCE
 
-    fun analyzeAndSerialize() {
+    open fun analyzeAndSerialize() {
         val destDir = environment.destDir
         if (destDir == null) {
             val configuration = environment.configuration

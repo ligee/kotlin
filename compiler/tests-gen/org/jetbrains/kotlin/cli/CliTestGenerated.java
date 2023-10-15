@@ -1589,4 +1589,32 @@ public class CliTestGenerated extends AbstractCliTest {
             runTest("compiler/testData/cli/metadata/optionalExpectationUsage.args");
         }
     }
+
+    @TestMetadata("compiler/testData/cli/data")
+    @TestDataPath("$PROJECT_ROOT")
+    @RunWith(JUnit3RunnerWithInners.class)
+    public static class Data extends AbstractCliTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doDataTest, this, testDataFilePath);
+        }
+
+        public void testAllFilesPresentInData() throws Exception {
+            KtTestUtil.assertAllTestsPresentByMetadataWithExcluded(this.getClass(), new File("compiler/testData/cli/data"), Pattern.compile("^(.+)\\.args$"), null, false);
+        }
+
+        @TestMetadata("constEvalTest.args")
+        public void testConstEvalTest() throws Exception {
+            runTest("compiler/testData/cli/data/constEvalTest.args");
+        }
+
+        @TestMetadata("containerTest.args")
+        public void testContainerTest() throws Exception {
+            runTest("compiler/testData/cli/data/containerTest.args");
+        }
+
+        @TestMetadata("smokeTest.args")
+        public void testSmokeTest() throws Exception {
+            runTest("compiler/testData/cli/data/smokeTest.args");
+        }
+    }
 }

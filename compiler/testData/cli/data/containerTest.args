@@ -1,0 +1,3 @@
+$TESTDATA_DIR$/containerTest.kt
+-cp
+$TESTDATA_DIR$/../../../../dist/common/kotlin-stdlib-common.jar

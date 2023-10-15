@@ -46,7 +46,7 @@ import org.jetbrains.kotlin.platform.CommonPlatforms
 import org.jetbrains.kotlin.util.DummyLogger
 import java.io.File
 
-internal class FirMetadataSerializer(
+open class FirMetadataSerializer(
     configuration: CompilerConfiguration,
     environment: KotlinCoreEnvironment
 ) : AbstractMetadataSerializer<List<ModuleCompilerAnalyzedOutput>>(configuration, environment) {

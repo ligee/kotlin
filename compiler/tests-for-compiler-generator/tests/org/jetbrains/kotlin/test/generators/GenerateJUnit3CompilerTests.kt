@@ -237,6 +237,7 @@ fun generateJUnit3CompilerTests(args: Array<String>, mainClassName: String?) {
                 model("cli/js", extension = "args", testMethod = "doJsTest", recursive = false)
                 model("cli/js-dce", extension = "args", testMethod = "doJsDceTest", recursive = false)
                 model("cli/metadata", extension = "args", testMethod = "doMetadataTest", recursive = false)
+                model("cli/data", extension = "args", testMethod = "doDataTest", recursive = false)
             }
 
             testClass<AbstractReplInterpreterTest> {
